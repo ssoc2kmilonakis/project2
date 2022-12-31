@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Project 2</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="areacalc.js"></script>
+  </head>
+  <body onload="onLoad()">
+    <div>
+      <h2 class="title">Υπολογισμός Εμβαδού Τριγώνου</h2>
+
+      <p class="description">
+        Ο υπολογισμός της περιοχής Τ ενός τριγώνου είναι ένα στοιχειώδες<br />
+        πρόβλημα που αντιμετωπίζεται συχνά με πολλούς τρόπους. Ο πιο γνωστός<br />
+        και απλός τύπος είναι: T = 1/2bh όπου το b είναι το μήκος μιας πλευράς
+        (βάσης) του τριγώνου,<br />
+        και h είναι το ύψος προς αυτή την πλευρά. Ο όρος βάση σημαίνει
+        οποιαδήποτε πλευρά<br />
+        και το ύψος υποδηλώνει το μήκος μίας κάθετου από την κορυφή απέναντι<br />
+        από την πλευρά μέχρι την ίδια την πλευρά.
+      </p>
+    </div>
+    <div class="container">
+      <div>
+        <p>Μήκος Βάσης:</p>
+        <input id="base" />
+      </div>
+      <div>
+        <p>Ύψος:</p>
+        <input id="height" />
+      </div>
+      <div>
+        <p>Εμβαδό:</p>
+        <input id="area" />
+      </div>
+      <button onclick="calculate()">Υπολογισμός Εμβαδού</button>
+    </div>
+    <script>
+      let baseInput = document.getElementById('base');
+      let heightInput = document.getElementById('height');
+      let areaInput = document.getElementById('area');
+      const onLoad = () => {
+        baseInput.value = '';
+        heightInput.value = '';
+      };
+      const calculate = () => {
+        areaInput.value = calculateArea(baseInput.value, heightInput.value);
+      };
+    </script>
+  </body>
+</html>
